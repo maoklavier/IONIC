@@ -1,5 +1,5 @@
 import { Component } from '@angular/core';
-import { NavController, NavParams } from 'ionic-angular';
+import { NavController } from 'ionic-angular';
 import { DetailPage } from '../../pages/detail/detail';
 import { HomePage } from '../../pages/home/home';
 /**
@@ -13,35 +13,32 @@ import { HomePage } from '../../pages/home/home';
   templateUrl: 'menu.html'
 })
 
-
-
-
 export class MenuComponent {
-  
+
   text: string;
 
-items: any[];
-item;
+  items: any[];
+  item;
 
 
   constructor(public navCtrl: NavController) {
-    
+
 
     this.items = [
-      {titulo: 'Home', argumento:'', component: HomePage},
-      {titulo: 'Licores', argumento:'Licores', component: DetailPage},
-      {titulo: 'Snacks', argumento:'Snacks', component: DetailPage},
-      {titulo: 'Bebidas', argumento:'Bebidas', component: DetailPage},
-      {titulo: 'Farmacia', argumento:'Farmacia', component: DetailPage},
+      { titulo: 'Home', argumento: '', component: HomePage },
+      { titulo: 'Licores', argumento: 'Licores', component: DetailPage },
+      { titulo: 'Snacks', argumento: 'Snacks', component: DetailPage },
+      { titulo: 'Bebidas', argumento: 'Bebidas', component: DetailPage },
+      { titulo: 'Farmacia', argumento: 'Farmacia', component: DetailPage },
     ]
   }
 
 
 
-  itemSelected(item){
-     
+  itemSelected(item) {
+
     this.navCtrl.push(DetailPage, { item: item });
-   
+
   }
 
 }
